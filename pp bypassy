@@ -1,0 +1,14 @@
+do local a;a=hookfunction(syn.request,newcclosure(function(...)local b={...}local c=b[1]if c.Url=="https://httpbin.org/get"then warn('bypassed hwid')return{Body=[[{
+                    "args": {}, 
+                    "headers": {
+                      "Accept": "*/*", 
+                      "Cookie": "", 
+                      "Host": "httpbin.org", 
+                      "Syn-Fingerprint": "ublubble hwid", 
+                      "Syn-User-Identifier": "ublubble hwid", 
+                      "User-Agent": "synx/v2.13.2", 
+                      "X-Amzn-Trace-Id": "ublubble hwid"
+                    }, 
+                    "origin": "127.0.0.1", 
+                    "url": "https://httpbin.org/get"
+                  }]]}else warn('stopped webhook')return{Success=true,StatusCode=204}end;return a(...)end))end;do local a;a=hookfunction(game.HttpGet,function(d,e,f)if e=="https://raw.githubusercontent.com/testexploiter123/R-XPLT/main/WL"then warn('loaded backup')e="https://raw.githubusercontent.com/KitesBackup/R-XPLT/main/WL"elseif e=="https://v4.ident.me"then warn('spoofed ip')return"127.0.0.1"end;return a(d,e,f)end)end;do local g;g=hookmetamethod(game,"__index",function(...)local b={...}local d=b[1]local h=b[2]if d~=nil and h=="UserId"and checkcaller()then warn('spoofed userid')return 19989922 end;return g(...)end)end
